@@ -310,4 +310,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
       html += `<hr/>`;
 
       html += `<h3 class="block-title">Năm/Tháng xây</h3>`;
-      html += 
+      html += `<p>Tuổi mụ: <strong>${R.build.ageMu}</strong> — Ngũ hành năm: <strong>${R.build.yearElement}</strong> — Ngũ hành tháng: <strong>${R.build.monthElement||'?'}</strong></p>`;
+      if(R.build.yearWarnings.length===0) html += `<p class="good">Năm ${yearX}: Không thấy cảnh báo lớn.</p>`;
+      else{
+        html += `<p><strong>Cảnh báo năm ${yearX}:</strong></p><ul class="clean">`;
+        R.build.yearWarnings.forEach(w=> html += `<li class="bad">${w}</li>`);
+        html += `</ul>`;
+      }
+      if(R.build.monthWarnings.length===0) html += `<p class="good">Tháng ${monthX}: Không thấy cảnh báo lớn.</p>`;
+      else{
+        html += `<p><strong>Cảnh báo tháng ${monthX}:</strong></p><ul class="clean">`;
+        R.build.monthWarnings.forEach(w=> html += `<li class="warn">${w}</li>`);
+        html += `</ul>`;
+      }
+
+      html += `<hr/>`;
+
+      html += `<h3 class="block-title">Môi trường xung quanh BĐS</h3>`;
+      if(R.site.problems.length===0){
+        html += `<p class="good">Không phát hiện yếu tố xấu đã chọn.</p>`;
+      }else{
+        html += `<p><strong>Vấn đề:</strong></p><ul class="clean">`;
+        R.site.problems.forEach(p=> html += `<li class="bad">${p}</li>`);
+        html += `</ul>`;
+        html += `<p><strong>Hóa giải gợi ý:</strong></p><ul class="clean">`;
+        R.site.solutions.forEach(s=> html += `<li>${s}</li>`);
+        html += `</ul>`;
+      }
+
+      el.innerHTML = html;
+
+    }catch(err){
+      console.error(err);
+      alert('Lỗi: '+(err.message||err));
+    }
+  });
+});
