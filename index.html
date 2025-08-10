@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phong Thủy BĐS - Tư vấn nhanh</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Ứng dụng Phong Thủy Bất Động Sản</h1>
+      <p class="subtitle">Hỗ trợ môi giới: phân tích cung mệnh, hướng nhà, năm/tháng xây, địa thế xung quanh</p>
+    </header>
+
+    <main>
+      <section id="input-section" class="card">
+        <h2>1) Nhập thông tin</h2>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="ngay-sinh">Ngày sinh (YYYY-MM-DD hoặc DD/MM/YYYY)</label>
+            <input type="text" id="ngay-sinh" placeholder="1992-03-13 hoặc 26/05/1992">
+            <small>Sinh từ 01/01 đến 13/03 tính theo năm trước (quy ước tiết khí đơn giản)</small>
+          </div>
+
+          <div class="form-group">
+            <label for="gioi-tinh">Giới tính</label>
+            <select id="gioi-tinh">
+              <option value="nam">Nam</option>
+              <option value="nu">Nữ</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="huong-nha">Hướng nhà/đất</label>
+            <select id="huong-nha">
+              <option value="Bắc">Bắc</option>
+              <option value="Đông Bắc">Đông Bắc</option>
+              <option value="Đông">Đông</option>
+              <option value="Đông Nam">Đông Nam</option>
+              <option value="Nam">Nam</option>
+              <option value="Tây Nam">Tây Nam</option>
+              <option value="Tây">Tây</option>
+              <option value="Tây Bắc">Tây Bắc</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="nam-xay">Năm xây/sửa (dương lịch)</label>
+            <input type="number" id="nam-xay" placeholder="2025" min="1900" max="2099">
+          </div>
+
+          <div class="form-group">
+            <label for="thang-xay">Tháng xây/sửa</label>
+            <select id="thang-xay">
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+              <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+              <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+              <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+            </select>
+          </div>
+        </div>
+
+        <h3>Yếu tố xấu của bất động sản (nếu có)</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="location-feature" value="benh-vien"> Trước mặt Bệnh viện</label>
+          <label><input type="checkbox" name="location-feature" value="chua"> Trước mặt Chùa</label>
+          <label><input type="checkbox" name="location-feature" value="nha-tho"> Trước mặt Nhà thờ</label>
+          <label><input type="checkbox" name="location-feature" value="truong-hoc"> Trước mặt Trường học</label>
+          <label><input type="checkbox" name="location-feature" value="duong-dam"> Đường đâm thẳng vào nhà</label>
+          <label><input type="checkbox" name="location-feature" value="nga-ba"> Ở Ngã ba</label>
+          <label><input type="checkbox" name="location-feature" value="nga-tu"> Ở Ngã tư</label>
+          <label><input type="checkbox" name="location-feature" value="duong-doc"> Đường ngang dốc trước nhà</label>
+          <label><input type="checkbox" name="location-feature" value="cot-dien"> Cột điện gần nhà/cổng</label>
+        </div>
+
+        <button id="btn-analyze">Phân tích phong thủy</button>
+      </section>
+
+      <section id="result-section" class="card">
+        <h2>2) Kết quả phân tích</h2>
+        <div id="result-content">
+          <p class="placeholder">Nhập đủ thông tin và nhấn “Phân tích phong thủy”.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 — Dữ liệu chỉ mang tính tham khảo. Nên tham vấn chuyên gia khi quyết định lớn.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
